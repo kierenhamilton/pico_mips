@@ -1,10 +1,12 @@
 module prog_mem (
-    input address,
-    output logic Rdata
+    input [4:0] address,
+    output logic [12:0] Rdata
 );
 
-  logic [] mem[];
+  logic [0:12] mem[30:0];
 
-  initial $readmemh("wave.hex", mem);
+  initial $readmemh("prog.hex", mem);
+
+  assign Rdata = mem[address];
 
 endmodule

@@ -6,7 +6,6 @@ module picoMIPS4test (
 );  // LEDs
 
   logic clk;  // slow clock, about 10Hz
-
   counter c (
       .fastclk(fastclk),
       .clk(clk)
