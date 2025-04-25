@@ -20,7 +20,6 @@ timeunit 1ns; timeprecision 100ps;
   wire ram_flag;
   wire alu_ctrl;
   wire mult_flag;
-
   wire nw;
   wire bran;
 

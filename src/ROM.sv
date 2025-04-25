@@ -5,7 +5,7 @@ module ROM (
 
   timeunit 1ns; timeprecision 100ps;
 
-  logic [7:0] mem[255:0];
+  logic [7:0] mem[0:255];
 
   initial $readmemh("wave.hex", mem);
 

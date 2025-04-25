@@ -3,9 +3,9 @@ module prog_mem (
     output logic [12:0] Rdata
 );
 
-  logic [0:12] mem[30:0];
+  logic [12:0] mem[0:12];
 
-  initial $readmemh("prog.hex", mem);
+  initial $readmemb("prog.bin", mem);
 
   assign Rdata = mem[address];
 

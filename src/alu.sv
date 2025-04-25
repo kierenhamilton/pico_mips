@@ -9,8 +9,7 @@ module alu (
 
   always_comb
     unique case (alu_ctrl)
-      0: result = input1 * input2;
-      //todo change this so that the bits 15:8 are taken in the result
+      0: result = (input1 * input2) >>> 8;
       1: result = input1 + input2;
     endcase
 
