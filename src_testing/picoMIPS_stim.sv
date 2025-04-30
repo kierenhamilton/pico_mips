@@ -4,7 +4,13 @@ module picoMIPS_stim;
 
   logic Clock;
   logic [9:0] SW;
-  wire [7:0] LED;
+  wire signed [7:0] LED;
+
+  logic [7:0] output_wave;
+  logic [7:0] tb_address;
+  real a;
+  real b;
+
 
 
   picoMIPS picoMIPS_dut (
@@ -26,10 +32,23 @@ module picoMIPS_stim;
   end
 
   initial begin
-    SW[8:0] = 9'b0;
-    #1000 SW[7:0] = 8'b00000010;
-    #1000 SW[8] = 1;
-    #5000 $finish;
+  	
+	for (int i=0; i<255; i++)
+	begin
+		SW[7:0] = i;
+		SW[8] = 0;
+		#1000;
+		SW[8] = 1;
+		#3000;
+		SW[8] = 0;
+		a = picoMIPS_dut.rom0.mem[i];
+		b = LED;
+		#500;
+	end
+	$finish;
+
+  
+
   end
 
 endmodule
