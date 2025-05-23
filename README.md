@@ -1,5 +1,16 @@
-# Pico mips for university
+# PicoMIPS processor
 
+## Feature-list
+- Implements Gaussian blur
+- 110 ALM (Altera FPGA)
+- Custom instructionset
+- Reads programs into Program Memory and ROM
+
+## Build instructions
+Built using Cadence Xcelium and the scripts available on 
+my Universities CAD system.
+- TODO: Verilator scripting
+# Detailed breakdown
 ## RAM 
 
 ### REGISTERS
